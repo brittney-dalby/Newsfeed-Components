@@ -38,14 +38,24 @@ function menuMaker(array){
   const ulElement = document.createElement('ul');
   const menuDiv = document.createElement('div');
 
+//Step 2:
 array.forEach(item => {
   const liElement = document.createElement('li');
   liElement.textContent = item;
   ulElement.appendChild(liElement);
 });
 
+menuDiv.classList.add('menu');
+menuDiv.appendChild(ulElement);
 
+//Step 3:
 
-  const menuButton = document.querySelector('.menu-button');
+const menuButton = document.querySelector('.menu-button');
+
+//Step 4:
+
+menuButton.addEventListener('click', evt => {
+  menuDiv.classList.toggle('menu--open');
+})
 
 }
